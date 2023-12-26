@@ -226,7 +226,8 @@ Transform:
   m_LocalPosition: {x: 0.0312, y: 0.0512, z: 0}
   m_LocalScale: {x: 17.838596, y: 10.217416, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1359024179}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -351,10 +352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0397f9ca0a1255049ae9396469c23e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 10
-  PosicionInicial: {x: 0, y: -3.25, z: 0}
-  entradaHorizontal: 0
-  entradaVertical: 0
+  _velocidad: 10
+  _PosicionInicial: {x: 0, y: -3.25, z: 0}
+  _horizontalInput: 0
+  _verticalInput: 0
+  _LaserPrefab: {fileID: 3545054723047574055, guid: 3cebf5a92eb640b4d99f9e53937b716b, type: 3}
+  _fireRate: 0.25
+  _nextFire: 0
 --- !u!212 &1220093526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -416,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 1220093524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.16, y: -3.21, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -499,12 +503,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359024177}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0328, y: -0, z: 0}
-  m_LocalScale: {x: 0.93514216, y: 0.9453456, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00008969322, y: -0.0050110514, z: 0}
+  m_LocalScale: {x: 0.052422408, y: 0.09252296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 437748165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -513,4 +517,3 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 437748165}
   - {fileID: 1220093527}
-  - {fileID: 1359024179}

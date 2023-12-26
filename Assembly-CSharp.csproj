@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Galaxy Shooter\Game\Scripts\Player.cs" />
+    <Compile Include="Assets\Galaxy Shooter\Game\Scripts\Laser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Galaxy Shooter\Game\Materials\Shaders\Galaxy.shader" />
