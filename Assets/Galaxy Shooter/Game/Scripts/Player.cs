@@ -14,11 +14,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _verticalInput;
     [SerializeField]
-    private GameObject _LaserPrefab;
+    private GameObject _Shot;
+    [SerializeField]
+    private GameObject _TripleShot;
     [SerializeField]
     private float _fireRate = 0.25f;
     [SerializeField]
     private float _nextFire = 0.0f;
+    [SerializeField]
+    public bool _disparoTripleActivado = false;
 
     void Start()
     {
@@ -29,10 +33,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
-        Shoot();
+        if (_disparoTripleActivado)
+            TripleShoot();
+        else
+            NormalShoot();
     }
 
-    private void Shoot()
+    private void NormalShoot()
     {
         // Si presiono tecla espacio o click izquierdo del mouse
         // Crear laser arriba de la posicion del Player
@@ -41,7 +48,20 @@ public class Player : MonoBehaviour
             // Cooldown
             _nextFire = Time.time + _fireRate;
             // Crear mi laser
-            Instantiate(_LaserPrefab, transform.position + new Vector3(0, 0.88f, 0), Quaternion.identity);
+            Instantiate(_Shot, transform.position + new Vector3(0, 0.88f, 0), Quaternion.identity);
+        }
+    }
+
+    private void TripleShoot()
+    {
+        // Si presiono tecla espacio o click izquierdo del mouse
+        // Crear laser arriba de la posicion del Player
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && (Time.time > _nextFire))
+        {
+            // Cooldown
+            _nextFire = Time.time + _fireRate;
+            // Crear mi triple laser
+            Instantiate(_TripleShot, transform.position, Quaternion.identity);
         }
     }
 
@@ -97,5 +117,17 @@ public class Player : MonoBehaviour
         {
             transform.Translate(Vector3.up * Time.deltaTime * _velocidad * moverVertical);
         }
+    }
+
+    public void TripleShotPowerUpOn()
+    {
+        _disparoTripleActivado = true;
+        StartCoroutine(TripleShotPowerDownRoutine());
+    }
+
+    public IEnumerator TripleShotPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(5);
+        _disparoTripleActivado = false;
     }
 }

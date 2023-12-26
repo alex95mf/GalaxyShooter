@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1078306147625294129}
   - component: {fileID: 8971078733424113947}
   m_Layer: 0
-  m_Name: laser
+  m_Name: Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b030d335857201646be69703e678d6e5, type: 3}
-  m_Color: {r: 0.4147293, g: 0.41010326, b: 0.90943396, a: 1}
+  m_Color: {r: 0.9547169, g: 0.93611044, b: 0.20715542, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,4 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299db1b28a517864d90b2adaa2aa5691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  _speed: 12
